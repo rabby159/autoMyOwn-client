@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
-import Navbar from "../../Shared/Navbar/Navbar";
 import Banner from "./Banner";
+import HomeNav from "./HomeNav";
 
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
             <Helmet>
                 <title>autoMyOwn | Home</title>
             </Helmet>
-            <Navbar></Navbar>
+            <HomeNav></HomeNav>
             <Banner></Banner>
         </div>
     );

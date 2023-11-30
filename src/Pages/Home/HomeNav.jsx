@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo-removebg-preview.png";
 
-const Navbar = () => {
+const HomeNav = () => {
   const navMenu = (
     <>
       <li><NavLink to='/'>Home</NavLink></li>
@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="navbar fixed z-10 max-w-7xl mx-auto bg-gray-800 text-white mt-3 rounded">
+      <div className="navbar fixed z-10 bg-opacity-10 max-w-7xl mx-auto bg-gray-800 text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -55,4 +55,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default HomeNav;
