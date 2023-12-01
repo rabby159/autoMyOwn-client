@@ -10,7 +10,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('/carData.json')
             },
             {
                 path: 'watchDemo',

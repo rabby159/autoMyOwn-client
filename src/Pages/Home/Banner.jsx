@@ -19,7 +19,7 @@ const Banner = () => {
               detailing, or specialty services.
             </p>
             <Link to='/createStore'>
-              <button className="btn btn">Create Store</button>
+              <button className="btn">Create Store</button>
             </Link>
           </div>
         </div>

@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "img": "https://i.ibb.co/qmJfWxs/2016-Honda-CR-V.jpg",
+      "carName": "Horizon X5",
+      "description": "The Horizon X5 is a sleek and stylish sedan that seamlessly combines performance and luxury.",
+      "price": 34999
+    },
+    {
+      "id": 2,
+      "img": "https://i.ibb.co/Zxd3Yc8/2017-BMW-M4.jpg",
+      "carName": "Quantum Turbocharged",
+      "description": "The Quantum Turbocharged is a compact and sporty hatchback designed for urban adventures.",
+      "price": 22499
+    },
+    {
+      "id": 3,
+      "img": "https://i.ibb.co/T01SMW5/2017-Volvo-S90.jpg",
+      "carName": "Eclipse GT",
+      "description": "The Eclipse GT is a dynamic coupe that effortlessly combines performance and elegance.",
+      "price": 42999
+    },
+    {
+      "id": 4,
+      "img": "https://i.ibb.co/7pXsPtx/marc-schafer.jpg",
+      "carName": "Aurora Hybrid",
+      "description": "The Aurora Hybrid is an eco-friendly sedan that redefines efficiency without compromising style.",
+      "price": 29999
+    },
+    {
+      "id": 5,
+      "img": "https://i.ibb.co/DQVfq1n/marten-bjork.jpg",
+      "carName": "Nebula Off-Road Edition",
+      "description": "Conquer any terrain with the Nebula Off-Road Edition, a robust SUV built for adventure seekers.",
+      "price": 37499
+    },
+    {
+      "id": 6,
+      "img": "https://i.ibb.co/FqsDGrg/nomao-saeki.jpg",
+      "carName": "Thunderbolt GT Convertible",
+      "description": "Experience the freedom of the open road with the Thunderbolt GT Convertible a robust SUV built for adventure.",
+      "price": 49999
+    }
+  ]
+  
