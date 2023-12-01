@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "../../Shared/Navbar/Navbar";
 
 const WatchDemo = () => {
   return (
     <div className="max-w-7xl mx-auto text-center">
+      <Helmet>
+                <title>autoMyOwn | Watch Demo</title>
+            </Helmet>
       <Navbar></Navbar>
       <div>
         <h2 className="text-5xl font-bold mb-10 pt-36">Watch Demo Video</h2>

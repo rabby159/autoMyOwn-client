@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 
 const NotFoundPage = () => {
     return (
         <div>
+            <Helmet>
+                <title>autoMyOwn | Not Found</title>
+            </Helmet>
             <div>
             <div className="flex items-center justify-center">
 
