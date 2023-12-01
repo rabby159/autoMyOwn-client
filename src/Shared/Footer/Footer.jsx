@@ -29,9 +29,7 @@ const Footer = () => {
       <footer className="footer px-10 py-4 border-t text-white border-base-300">
         <aside className="">
           <img className='w-36' src={logo} alt="" />
-          <p>
-            Providing reliable tech since 1992
-          </p>
+          <p>Copyright © 2023 - All right reserved by autoMyOwn</p>
         </aside>
         <nav className="md:place-self-center md:justify-self-end">
           <div className="grid grid-flow-col gap-4">
