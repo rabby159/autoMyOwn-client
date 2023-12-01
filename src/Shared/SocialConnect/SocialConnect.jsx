@@ -10,6 +10,9 @@ const SocialConnect = () => {
     const {signInGoogle} = useAuth();
     const navigate = useNavigate();
     const axiosPublic = useAxiosPublic();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
 
     const handleGoogleLogin = () =>{
         signInGoogle()
@@ -27,7 +30,7 @@ const SocialConnect = () => {
                     showConfirmButton: false,
                     timer: 1500,
                   });
-                  navigate("/");
+                  navigate(from, { replace: true });
                 }
               });
             })

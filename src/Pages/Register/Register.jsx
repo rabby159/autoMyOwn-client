@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet-async";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useForm } from "react-hook-form";
 import SocialConnect from "../../Shared/SocialConnect/SocialConnect";
+import Footer from "../../Shared/Footer/Footer";
 
 const Register = () => {
   const {
@@ -20,6 +21,8 @@ const Register = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const axiosPublic = useAxiosPublic();
+
+  const from = location.state?.from?.pathname || "/";
 
   const onSubmit = (data) => {
     createUser(data.email, data.password).then((result) => {
@@ -41,7 +44,7 @@ const Register = () => {
                 showConfirmButton: false,
                 timer: 1500,
               });
-              navigate("/");
+              navigate(from, { replace: true });
             }
           });
         })
@@ -62,7 +65,7 @@ const Register = () => {
         <title>autoMyOwn | Register</title>
       </Helmet>
       <Navbar></Navbar>
-      <div className="flex justify-center items-center h-[95vh]">
+      <div className="flex justify-center items-center h-[80vh]">
         <div>
           <img
             className="w-[60vh]"
@@ -205,6 +208,7 @@ const Register = () => {
           <SocialConnect></SocialConnect>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 };

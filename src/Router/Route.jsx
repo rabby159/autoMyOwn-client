@@ -5,6 +5,8 @@ import WatchDemo from "../Pages/WatchDemo/WatchDemo";
 import NotFoundPage from "../Pages/ErrorPage/NotFoundPage";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import CreateStore from "../Pages/CreateStore/CreateStore";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
     {
         path: '/register',
         element: <Register></Register>
+    },
+    {
+        path: '/createStore',
+        element: <PrivateRoute><CreateStore></CreateStore></PrivateRoute>
     }
 ]);
 

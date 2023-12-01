@@ -1,8 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import Navbar from "../../Shared/Navbar/Navbar";
+import Footer from "../../Shared/Footer/Footer";
 
 const WatchDemo = () => {
   return (
+    <>
     <div className="max-w-7xl mx-auto text-center">
       <Helmet>
                 <title>autoMyOwn | Watch Demo</title>
@@ -20,6 +22,8 @@ const WatchDemo = () => {
         ></iframe>
       </div>
     </div>
+    <Footer></Footer>
+    </>
   );
 };
 

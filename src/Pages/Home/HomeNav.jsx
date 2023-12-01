@@ -13,8 +13,12 @@ const HomeNav = () => {
     <>
       <li><NavLink to='/'>Home</NavLink></li>
       <li><NavLink to='/createStore'>Create Store</NavLink></li>
-      <li><NavLink to='/login'>Login</NavLink></li>
-      <li><NavLink to='/register'>Register</NavLink></li>
+      {
+        user ? <div></div> : <li><NavLink to='/login'>Login</NavLink></li>
+      }
+      {
+        user ? <div></div> : <li><NavLink to='/register'>Register</NavLink></li>
+      }
       <li><NavLink to='/watchDemo'>Watch Demo</NavLink></li>
     </>
   );

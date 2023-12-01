@@ -5,11 +5,14 @@ import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import { Helmet } from "react-helmet-async";
 import SocialConnect from "../../Shared/SocialConnect/SocialConnect";
+import Footer from "../../Shared/Footer/Footer";
 
 const Login = () => {
     const {loginUser} = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -29,7 +32,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        navigate(location?.state ? location.state : "/");
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         Swal.fire({
@@ -47,7 +50,7 @@ const Login = () => {
                 <title>autoMyOwn | Login</title>
             </Helmet>
       <Navbar></Navbar>
-      <div className="flex justify-center items-center h-[90vh] gap-10">
+      <div className="flex justify-center items-center h-[80vh] gap-10">
         <div>
           <img
             className="w-[60vh]"
@@ -126,6 +129,7 @@ const Login = () => {
           <SocialConnect></SocialConnect>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 };

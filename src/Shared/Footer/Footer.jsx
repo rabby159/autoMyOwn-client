@@ -2,7 +2,7 @@ import logo from '../../assets/logo-removebg-preview.png'
 
 const Footer = () => {
   return (
-    <div className="bg-gray-800 ">
+    <div className="bg-gray-800 mt-5">
         <div className="max-w-7xl mx-auto ">
       <footer className="footer p-10 text-white">
         <nav>
