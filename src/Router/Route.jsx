@@ -9,6 +9,8 @@ import CreateStore from "../Pages/CreateStore/CreateStore";
 import PrivateRoute from "./PrivateRoute";
 import DashboardLayout from "../Layouts/DashboardLayout";
 import ProductManage from "../Pages/Dashboard/ProductMange/ProductManage";
+import AddProduct from "../Pages/Dashboard/AddProduct/AddProduct";
+import AllUser from "../Pages/Dashboard/AllUser/AllUser";
 
 const router = createBrowserRouter([
     {
@@ -48,6 +50,14 @@ const router = createBrowserRouter([
             {
                 path: 'productManage',
                 element: <ProductManage></ProductManage>
+            },
+            {
+                path: 'addProduct',
+                element: <AddProduct></AddProduct>
+            },
+            {
+                path: 'allUser',
+                element: <AllUser></AllUser>
             }
         ]
     }

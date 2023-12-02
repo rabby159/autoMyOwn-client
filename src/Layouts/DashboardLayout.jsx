@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaArtstation, FaCcAmazonPay, FaHouseMedical, FaSackDollar, FaShop } from "react-icons/fa6";
+import { FaArtstation, FaCcAmazonPay, FaHouseMedical, FaSackDollar, FaShop, FaUser } from "react-icons/fa6";
 // import useAdmin from "../Hooks/useAdmin";
 
 const DashboardLayout = () => {
@@ -30,6 +30,9 @@ const DashboardLayout = () => {
             </li>
             <li>
               <NavLink to="/dashboard/salesSummary"> <FaArtstation /> Sales Summary</NavLink>
+            </li>
+            <li>
+              <NavLink to="/dashboard/allUser"> <FaUser /> All User</NavLink>
             </li>
           </div>
 

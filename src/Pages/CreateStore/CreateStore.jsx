@@ -4,11 +4,19 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import Navbar from "../../Shared/Navbar/Navbar";
 import Footer from "../../Shared/Footer/Footer";
+import { useLocation, useNavigate } from "react-router-dom";
+
 
 const CreateStore = () => {
     
   const { register, handleSubmit, reset } = useForm();
   const axiosSecure = useAxiosSecure();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/dashboard/productManage";
+
+
   const onSubmit = async (data) => {
     console.log(data);
 
@@ -28,11 +36,13 @@ const CreateStore = () => {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: `${data.name} is added to the menu.`,
+                    title: `${data.name} is a new shop.`,
                     showConfirmButton: false,
                     timer: 1500
                   });
+                  navigate(from, { replace: true });
         }
+        
     }
   };
 
