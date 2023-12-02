@@ -13,6 +13,7 @@ const HomeNav = () => {
     <>
       <li><NavLink to='/'>Home</NavLink></li>
       <li><NavLink to='/createStore'>Create Store</NavLink></li>
+      <li><NavLink to='/dashboard/productManage'>Dashboard</NavLink></li>
       {
         user ? <div></div> : <li><NavLink to='/login'>Login</NavLink></li>
       }

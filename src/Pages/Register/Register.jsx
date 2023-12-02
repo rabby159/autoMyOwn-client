@@ -22,7 +22,7 @@ const Register = () => {
   const navigate = useNavigate();
   const axiosPublic = useAxiosPublic();
 
-  const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || "/createStore";
 
   const onSubmit = (data) => {
     createUser(data.email, data.password).then((result) => {

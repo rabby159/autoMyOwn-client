@@ -6,6 +6,7 @@ import Navbar from "../../Shared/Navbar/Navbar";
 import Footer from "../../Shared/Footer/Footer";
 
 const CreateStore = () => {
+    
   const { register, handleSubmit, reset } = useForm();
   const axiosSecure = useAxiosSecure();
   const onSubmit = async (data) => {
@@ -20,7 +21,7 @@ const CreateStore = () => {
             OwnerName: data.OwnerName,
             OwnerEmail: data.OwnerEmail
         }
-        const shopRes = await axiosSecure.post('/shop', createShop)
+        const shopRes = await axiosSecure.post('/shops', createShop)
         console.log(shopRes.data);
         if(shopRes.data.insertedId){
             reset();
@@ -105,7 +106,9 @@ const CreateStore = () => {
               <input
                 type="name"
                 placeholder="Shop Owner Name"
+                
                 {...register('OwnerName', { required: true })}
+                
                 required
                 className="input input-bordered w-full"
               />

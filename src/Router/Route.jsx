@@ -7,6 +7,8 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import CreateStore from "../Pages/CreateStore/CreateStore";
 import PrivateRoute from "./PrivateRoute";
+import DashboardLayout from "../Layouts/DashboardLayout";
+import ProductManage from "../Pages/Dashboard/ProductMange/ProductManage";
 
 const router = createBrowserRouter([
     {
@@ -36,6 +38,18 @@ const router = createBrowserRouter([
     {
         path: '/createStore',
         element: <PrivateRoute><CreateStore></CreateStore></PrivateRoute>
+    },
+    
+    //dashboard routes
+    {
+        path: '/dashboard',
+        element: <DashboardLayout></DashboardLayout>,
+        children: [
+            {
+                path: 'productManage',
+                element: <ProductManage></ProductManage>
+            }
+        ]
     }
 ]);
 
