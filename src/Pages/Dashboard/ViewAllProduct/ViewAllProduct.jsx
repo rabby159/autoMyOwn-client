@@ -1,11 +1,51 @@
+/* eslint-disable no-unused-vars */
 import { FaRegTrashCan } from "react-icons/fa6";
 import useProduct from "../../../Hooks/useProduct";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+// import useAddProduct from "../../../Hooks/useAddProduct";
+import { useQuery } from "@tanstack/react-query";
 
 const ViewAllProduct = () => {
   const [product] = useProduct();
-//   console.log(product);
+//   const [ refetch] = useAddProduct();
+  const axiosSecure = useAxiosSecure();
+  const { data: addProduct = [], refetch } = useQuery({
+    queryKey: ["addProduct"],
+    queryFn: async () => {
+      const res = await axiosSecure.get("/addProduct");
+      return res.data;
+    },
+  });
+
+  const handleDelete = (item) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const res = await axiosSecure.delete(`/addProduct/${item._id}`);
+        if (res.data.deletedCount > 0) {
+            refetch();
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: `${item.name} has been deleted`,
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+      }
+    });
+  };
+
   return (
     <div>
       <SectionTitle heading={"All Product Here!"}></SectionTitle>
@@ -42,11 +82,14 @@ const ViewAllProduct = () => {
                 <td>05</td>
                 <th>
                   <Link to={`/dashboard/updateProduct/${item._id}`}>
-                  <button className="btn btn-ghost btn-xs">Update</button>
+                    <button className="btn btn-ghost btn-xs">Update</button>
                   </Link>
                 </th>
                 <th>
-                  <button className="btn btn-ghost btn-lg">
+                  <button
+                    onClick={() => handleDelete(item)}
+                    className="btn btn-ghost btn-lg"
+                  >
                     <FaRegTrashCan className="text-red-600" />
                   </button>
                 </th>

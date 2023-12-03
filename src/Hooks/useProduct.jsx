@@ -6,7 +6,7 @@ import useAxiosSecure from "./useAxiosSecure";
 const useProduct = () => {
     const axiosSecure = useAxiosSecure();
     const { user} = useAuth();
-    const { refetch, data: product = [] } = useQuery({
+    const {  data: product = [], refetch } = useQuery({
         queryKey: ['product', user?.email],
         queryFn: async() => {
             const res = await axiosSecure.get(`/addProduct?email=${user.email}`);
