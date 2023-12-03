@@ -12,6 +12,7 @@ import ProductManage from "../Pages/Dashboard/ProductMange/ProductManage";
 import AddProduct from "../Pages/Dashboard/AddProduct/AddProduct";
 import AllUser from "../Pages/Dashboard/AllUser/AllUser";
 import AdminRoute from "./AdminRoute";
+import ViewAllProduct from "../Pages/Dashboard/ViewAllProduct/ViewAllProduct";
 
 const router = createBrowserRouter([
     {
@@ -50,11 +51,16 @@ const router = createBrowserRouter([
         children: [
             {
                 path: 'productManage',
-                element: <ProductManage></ProductManage>
+                element: <ProductManage></ProductManage>,
+                loader: () => fetch('http://localhost:5000/addProduct')
             },
             {
                 path: 'addProduct',
                 element: <AddProduct></AddProduct>
+            },
+            {
+                path: 'viewAllProduct',
+                element: <ViewAllProduct></ViewAllProduct>
             },
             {
                 path: 'allUser',

@@ -1,16 +1,20 @@
+/* eslint-disable react/prop-types */
 import { useForm } from "react-hook-form";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import useAuth from "../../../Hooks/useAuth";
 
 
 const AddProduct = () => {
+
   const { register, handleSubmit, reset } = useForm();
   const axiosPublic = useAxiosPublic();
   const axiosSecure = useAxiosSecure();
   const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
   const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
+  const {user} = useAuth();
 
   const onSubmit = async (data) => {
     
@@ -20,8 +24,9 @@ const AddProduct = () => {
                 'content-type': 'multipart/form-data'
             }
         });
-        if (res.data.success) {
+        if (res.data.success && user.email) {
           const newProduct = {
+              email: user.email,
               name: data.name,
               quantity: parseFloat(data.quantity),
               description:data.description,
@@ -29,7 +34,8 @@ const AddProduct = () => {
               cost: parseFloat(data.cost),
               profit: parseFloat(data.profit),
               discount: parseFloat(data.discount),
-              image: res.data.data.display_url
+              image: res.data.data.display_url,
+              
 
           }
           // 
