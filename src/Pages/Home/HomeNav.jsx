@@ -3,7 +3,7 @@ import logo from "../../assets/logo-removebg-preview.png";
 import useAuth from "../../Hooks/useAuth";
 
 const HomeNav = () => {
-  const {user, logOut} = useAuth();
+  const { user, logOut } = useAuth();
   const handleSignOut = () => {
     logOut()
       .then((res) => console.log(res.user))
@@ -11,16 +11,32 @@ const HomeNav = () => {
   };
   const navMenu = (
     <>
-      <li><NavLink to='/'>Home</NavLink></li>
-      <li><NavLink to='/createStore'>Create Store</NavLink></li>
-      <li><NavLink to='/dashboard/productManage'>Dashboard</NavLink></li>
-      {
-        user ? <div></div> : <li><NavLink to='/login'>Login</NavLink></li>
-      }
-      {
-        user ? <div></div> : <li><NavLink to='/register'>Register</NavLink></li>
-      }
-      <li><NavLink to='/watchDemo'>Watch Demo</NavLink></li>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/createStore">Create Store</NavLink>
+      </li>
+      <li>
+        <NavLink to="/dashboard/productManage">Dashboard</NavLink>
+      </li>
+      {user ? (
+        <div></div>
+      ) : (
+        <li>
+          <NavLink to="/login">Login</NavLink>
+        </li>
+      )}
+      {user ? (
+        <div></div>
+      ) : (
+        <li>
+          <NavLink to="/register">Register</NavLink>
+        </li>
+      )}
+      <li>
+        <NavLink to="/watchDemo">Watch Demo</NavLink>
+      </li>
     </>
   );
 
@@ -60,7 +76,7 @@ const HomeNav = () => {
           <ul className="menu menu-horizontal px-1">{navMenu}</ul>
         </div>
         <div className="">
-        {user?.email ? (
+          {user?.email ? (
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
