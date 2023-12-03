@@ -13,6 +13,7 @@ import AddProduct from "../Pages/Dashboard/AddProduct/AddProduct";
 import AllUser from "../Pages/Dashboard/AllUser/AllUser";
 import AdminRoute from "./AdminRoute";
 import ViewAllProduct from "../Pages/Dashboard/ViewAllProduct/ViewAllProduct";
+import UpdateProduct from "../Pages/Dashboard/UpdateProduct/UpdateProduct";
 
 const router = createBrowserRouter([
     {
@@ -61,6 +62,11 @@ const router = createBrowserRouter([
             {
                 path: 'viewAllProduct',
                 element: <ViewAllProduct></ViewAllProduct>
+            },
+            {
+                path: 'updateProduct/:id',
+                element: <UpdateProduct></UpdateProduct>,
+                loader: ({params}) => fetch(`http://localhost:5000/addProduct/${params.id}`)
             },
             {
                 path: 'allUser',
