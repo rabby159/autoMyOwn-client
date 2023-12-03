@@ -11,7 +11,7 @@ const NotFoundPage = () => {
             <div>
             <div className="flex items-center justify-center">
 
-            <img className="w-[60vh]" src='https://i.ibb.co/Dp1wK2y/notfound.jpg' alt="" />
+            <img className="w-[60vh]" src='https://i.ibb.co/bgRTN5R/notfound.jpg' alt="" />
             </div>
             <div className="flex justify-center mt-5">
             <Link className="" to='/'>

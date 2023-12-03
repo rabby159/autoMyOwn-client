@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import {
+  FaArrowRightFromBracket,
   FaArtstation,
   FaCcAmazonPay,
   FaHouseMedical,
@@ -8,14 +9,24 @@ import {
   FaUser,
 } from "react-icons/fa6";
 import useAdmin from "../Hooks/useAdmin";
+import useAuth from "../Hooks/useAuth";
+import Footer from "../Shared/Footer/Footer";
 
 
 const DashboardLayout = () => {
   const [isAdmin] = useAdmin();
+  const { logOut } = useAuth();
+  const handleSignOut = () => {
+    logOut()
+      .then((res) => console.log(res.user))
+      .catch((err) => console.log(err));
+  };
+
 
   return (
+    <>
     <div className="flex gap-8">
-      <div className="w-80 min-h-screen bg-gray-800">
+      <div className="w-80 min-h-screen bg-gray-700">
         <div>
           <h2 className="text-white text-center mt-5">Dashboard Menu</h2>
         </div>
@@ -58,13 +69,11 @@ const DashboardLayout = () => {
               </li>
               <li>
                 <NavLink to="/dashboard/payment">
-                  {" "}
                   <FaCcAmazonPay /> Subscription & Payment
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/salesSummary">
-                  {" "}
                   <FaArtstation /> Sales Summary
                 </NavLink>
               </li>
@@ -79,6 +88,11 @@ const DashboardLayout = () => {
                 <FaHouseMedical></FaHouseMedical> Home
               </NavLink>
             </li>
+            <li>
+              <NavLink to="/" onClick={handleSignOut}>
+              <FaArrowRightFromBracket /> LogOut
+              </NavLink>
+            </li>
           </div>
         </ul>
       </div>
@@ -86,6 +100,10 @@ const DashboardLayout = () => {
         <Outlet></Outlet>
       </div>
     </div>
+    <div className="-mt-5">
+    <Footer></Footer>
+    </div>
+    </>
   );
 };
 
