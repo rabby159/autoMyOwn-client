@@ -12,7 +12,7 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 const UpdateProduct = () => {
 
     const product = useLoaderData();
-    console.log(product)
+    // console.log(product)
     const {name, quantity, description, _id, location, cost, profit, discount} = product;
 
     const { register, handleSubmit, reset } = useForm();
