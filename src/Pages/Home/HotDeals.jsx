@@ -2,8 +2,12 @@ import { useLoaderData } from "react-router-dom";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import CarData from "./CarData";
 
+
+
 const HotDeals = () => {
   const carData = useLoaderData();
+
+
 
   return (
     <div className="max-w-7xl mx-auto">

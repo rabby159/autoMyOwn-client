@@ -6,6 +6,7 @@ import Navbar from "../../Shared/Navbar/Navbar";
 import Footer from "../../Shared/Footer/Footer";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const CreateStore = () => {
   const { user } = useAuth();
@@ -50,6 +51,9 @@ const CreateStore = () => {
   return (
     <>
       <div className="max-w-7xl mx-auto mb-20">
+      <Helmet>
+                <title>autoMyOwn | Create Shop</title>
+            </Helmet>
         <Navbar></Navbar>
         <SectionTitle
           heading="Create Shop"

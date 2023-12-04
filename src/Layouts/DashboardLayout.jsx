@@ -11,6 +11,7 @@ import {
 import useAdmin from "../Hooks/useAdmin";
 import useAuth from "../Hooks/useAuth";
 import Footer from "../Shared/Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 
 const DashboardLayout = () => {
@@ -25,10 +26,18 @@ const DashboardLayout = () => {
 
   return (
     <>
+    <Helmet>
+                <title>autoMyOwn | Dashboard</title>
+            </Helmet>
     <div className="flex gap-8">
       <div className="w-80 min-h-screen bg-gray-700">
         <div>
-          <h2 className="text-white text-center mt-5">Dashboard Menu</h2>
+          {
+            isAdmin ? 
+            <h2 className="text-white text-center mt-5">Dashboard Menu Admin</h2> 
+            :
+            <h2 className="text-white text-center mt-5">Dashboard Menu Manager</h2>
+          }
         </div>
         <ul className="menu p-4 text-base font-medium text-white divide-y divide-blue-200">
           {
@@ -36,7 +45,7 @@ const DashboardLayout = () => {
             isAdmin ? (
             <div>
               <li>
-                <NavLink to="/dashboard/productManage">
+                <NavLink to="/dashboard/allShop">
                   <FaShop />
                   All Shop
                 </NavLink>
@@ -96,7 +105,7 @@ const DashboardLayout = () => {
           </div>
         </ul>
       </div>
-      <div className="flex-1 mt-10 text-3xl font-semibold p-16">
+      <div className="flex-1 mt-10 text-2xl font-semibold p-16">
         <Outlet></Outlet>
       </div>
     </div>

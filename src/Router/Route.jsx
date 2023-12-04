@@ -16,6 +16,12 @@ import ViewAllProduct from "../Pages/Dashboard/ViewAllProduct/ViewAllProduct";
 import UpdateProduct from "../Pages/Dashboard/UpdateProduct/UpdateProduct";
 import SalesCollection from "../Pages/Dashboard/SalesCollection/SalesCollection";
 import CheckOut from "../Pages/Dashboard/CheckOut/CheckOut";
+import Payment from "../Pages/Dashboard/Payment/Payment";
+import BasicPay from "../Pages/Dashboard/Payment/BasicPay";
+import PremiumPay from "../Pages/Dashboard/Payment/PremiumPay";
+import BusinessPay from "../Pages/Dashboard/Payment/BusinessPay";
+import SalesSummery from "../Pages/Dashboard/SalesSummery/SalesSummery";
+import AllShop from "../Pages/Dashboard/AllShop/AllShop";
 
 const router = createBrowserRouter([
     {
@@ -79,6 +85,33 @@ const router = createBrowserRouter([
                 path: 'checkOut/:id',
                 element: <CheckOut></CheckOut>,
                 loader: ({params}) => fetch(`http://localhost:5000/addProduct/${params.id}`)
+            },
+            {
+                path: 'payment',
+                element: <Payment></Payment>
+            },
+            {
+                path: 'basicPay',
+                element: <BasicPay></BasicPay>
+            },
+            {
+                path: 'premiumPay',
+                element: <PremiumPay></PremiumPay>
+            },
+            {
+                path: 'businessPay',
+                element: <BusinessPay></BusinessPay>
+            },
+            {
+                path: 'salesSummary',
+                element: <SalesSummery></SalesSummery>
+            },
+
+            //admin
+            {
+                path: 'allShop',
+                element: <AdminRoute><AllShop></AllShop></AdminRoute>,
+                loader: () => fetch(`http://localhost:5000/shops`)
             },
             {
                 path: 'allUser',

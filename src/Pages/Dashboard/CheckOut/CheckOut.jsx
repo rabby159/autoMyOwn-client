@@ -6,6 +6,7 @@ const CheckOut = () => {
 
   return (
     <div>
+        <h2 className="text-center mb-10 text-xl">Check Out</h2>
       <div className="card lg:card-side bg-base-100 shadow-xl">
         <figure>
           <img

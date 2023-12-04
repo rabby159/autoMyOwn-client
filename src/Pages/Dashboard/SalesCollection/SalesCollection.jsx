@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useProduct from "../../../Hooks/useProduct";
+import { Helmet } from "react-helmet-async";
 
 const SalesCollection = () => {
 
@@ -8,6 +9,9 @@ const SalesCollection = () => {
 
     return (
         <>
+        <Helmet>
+                <title>autoMyOwn | Sale Collection</title>
+            </Helmet>
         <div>
             <h2 className="text-center mb-10 text-xl">Manage All Product</h2>
         </div>

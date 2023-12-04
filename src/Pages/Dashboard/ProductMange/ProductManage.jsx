@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import useProduct from "../../../Hooks/useProduct";
+import { Helmet } from "react-helmet-async";
 
 const ProductManage = () => {
 
     const [product] =useProduct();
     return (
         <>
+        <Helmet>
+                <title>autoMyOwn | Management</title>
+            </Helmet>
         <div>
             <h2 className="text-center mb-10 text-xl">Manage Your Product</h2>
         </div>

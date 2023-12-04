@@ -1,9 +1,21 @@
 /* eslint-disable react/prop-types */
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 const CarData = ({data}) => {
     const {carName, img, description, price} = data;
+
+    useEffect(() => {
+      AOS.init({
+        delay: 500, 
+        duration: 1000,
+      });
+    })
+
   return (
     <div>
-      <div className="card bg-base-100 shadow-xl my-10">
+      <div className="card bg-base-100 shadow-xl my-10" data-aos="zoom-in-up">
         <figure className="">
           <img
             src={img}

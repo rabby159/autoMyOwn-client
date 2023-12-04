@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { FaRegTrashCan} from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 
 const AllUser = () => {
@@ -61,6 +62,9 @@ const AllUser = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>autoMyOwn | All User</title>
+            </Helmet>
             <div className="my-4">
                 <h2 className="text-3xl">All Users</h2>
             </div>

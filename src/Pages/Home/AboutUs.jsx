@@ -7,7 +7,7 @@ const AboutUs = () => {
         heading={"About Us"}
         subHeading={"We are more."}
       ></SectionTitle>
-      <div className="flex gap-10 items-center mt-10">
+      <div className="flex flex-col-reverse md:flex-row gap-10 items-center mt-10">
         <div className="flex-1 bg-gray-800 text-white p-5 rounded">
           <h2 className="text-4xl font-semibold mb-3">autoMyOwn</h2>
           <div className="mb-5">
