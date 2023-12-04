@@ -1,5 +1,5 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import useAuth from "../../../Hooks/useAuth";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
@@ -9,22 +9,11 @@ const CheckOutForm = () => {
     const stripe = useStripe();
     const {user} = useAuth();
     const axiosSecure = useAxiosSecure();
-    const [clientSecret, setClientSecret] = useState('');
     const [transactionId, setTransactionId] = useState('');
     const [error, setError] = useState('');
     const elements = useElements();
     const price = 10;
 
-    useEffect(() => {
-        if (price > 0) {
-            axiosSecure.post('/create-payment-intent', { price: price })
-                .then(res => {
-                    console.log(res.data.clientSecret);
-                    setClientSecret(res.data.clientSecret);
-                })
-        }
-
-    }, [axiosSecure, price])
 
     const handleSubmit = async(event) =>{
         event.preventDefault();
@@ -115,7 +104,7 @@ const CheckOutForm = () => {
                     },
                 }}
             />
-            <button className="bg-gray-800 text-white px-4 py-2 rounded text-sm my-4" type="submit" disabled={!stripe || !clientSecret}>
+            <button className="bg-gray-800 text-white px-4 py-2 rounded text-sm my-4" type="submit" disabled={!stripe}>
                 Pay
             </button>
             <p className="text-red-600">{error}</p>
