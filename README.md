@@ -1,8 +1,13 @@
-# React + Vite
+# autoMyOwn
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## [Project Live Link]
 
-Currently, two official plugins are available:
+Click here for the project live link: https://automyown.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Different features and functionalities of my website:
+
+- Product data and user data are save in mongoDB database.
+- My website event is a stystem about auto rent.Here normal clint rent there needed car. And a shop manager can place his/her car for rent. Admin can see the all shop details and user details.
+- This website is secure because of my login system. Here have login and register page.
+- Website have some private section when any client login or registered my site then he/she will be see the private section.
+- This site have amazing design those attractive and trusted any client.
